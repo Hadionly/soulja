@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Blaka+Ink&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/** hero section */
+.cloud-animation {
+  animation: float 5s ease-in-out infinite;
+}
+.youtube-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .youtube-container iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .youtube-container iframe {
+    /* width = 100 / (9 / 16) = 177.78 */
+    width: 177.78vh;
+  }
+}
+/** T-shirts section */
+.custom-arrows .slick-prev,
+.custom-arrows .slick-next {
+  color: black;
+}
+
+.custom-dots .slick-dots li button:before {
+  color: black;
+}
+
+.custom-dots .slick-dots li.slick-active button:before {
+  color: black;
+}
+/** Lyrics section */
+@keyframes rainbow {
+  0% {
+    color: #ff0000;
+  }
+  14% {
+    color: #ff7f00;
+  }
+  28% {
+    color: #ffff00;
+  }
+  42% {
+    color: #00ff00;
+  }
+  57% {
+    color: #0000ff;
+  }
+  71% {
+    color: #8b00ff;
+  }
+  85% {
+    color: #ff00ff;
+  }
+  100% {
+    color: #ff0000;
+  }
+}
+
+.funky-text {
+  animation: rainbow 5s linear infinite;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  font-family: "Aref Ruqaa Ink", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.hollow-text {
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff,
+    -1px 1px 0 #fff, 1px 1px 0 #fff;
+  font-family: "Blaka Ink", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-arabic {
+  font-family: "Tajawal", sans-serif;
+  font-weight: bold;
+}
+/** Vinyl carousel */
+.vinyl-carousel .slick-arrow {
+  color: white;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.vinyl-carousel .slick-prev {
+  left: 10px;
+}
+
+.vinyl-carousel .slick-next {
+  right: 10px;
+}
+
+.vinyl-carousel .slick-dots li button:before {
+  color: white;
+}
