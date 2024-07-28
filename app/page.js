@@ -2,7 +2,7 @@
 import { Carousel } from "antd";
 import Image from "next/image";
 import YouTube from "react-youtube";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaInstagram, FaTwitter, FaYoutube, FaTiktok } from "react-icons/fa";
 import AOS from "aos";
@@ -867,19 +867,28 @@ const LabelSection = () => {
       spotify: "https://open.spotify.com/artist/agoff",
     },
   ];
-
   return (
     <section className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 py-16 w-full">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center mb-12">
+        <div className="flex flex-col items-center mb-12 relative">
           <Image
+            data-aos="fade-down-left"
+            data-aos-delay="500"
+            src="/images/eagle.png"
+            alt="eagle"
+            width={170}
+            height={170}
+            className="shadow-1xl absolute left-2 -top-32 md:left-60"
+          />
+
+          {/* <Image
             data-aos="fade-up"
             src="/images/Cactus-Jack-Symbol.png"
             alt="Stacks on Deck Entertainment Logo"
             width={150}
             height={150}
             className="mb-6"
-          />
+          /> */}
           <h2
             className="text-4xl font-bold text-white text-center"
             data-aos="fade-up">

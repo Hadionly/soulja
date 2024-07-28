@@ -24,10 +24,9 @@ const Header = () => {
           />
         </div>
         {/* Hamburger menu icon */}
-        <MenuOutlined
-          className="md:hidden block cursor-pointer"
-          onClick={toggleMenu}
-        />
+        <div className="flex md:hidden">
+          <MenuOutlined className="cursor-pointer" onClick={toggleMenu} />
+        </div>
         {/* Navigation menu */}
         <nav
           className={`md:flex md:space-x-4 ${
