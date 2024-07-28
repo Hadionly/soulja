@@ -23,6 +23,7 @@ export default function Home() {
       {/* About */}
       <AboutSection />
       {/* T-shirts */}
+      <UpcomingMerchSection />
       <TshirtsCarousel />
       {/* Lyrics */}
       <LyricsSection />
@@ -34,24 +35,14 @@ export default function Home() {
       <JewellerySection />
       {/* Instagram */}
       <InstagramSection />
+      {/* Label section */}
+      <LabelSection />
       {/* Contact */}
       <ContactSection />
     </main>
   );
 }
 
-const FadeUpAnimation = ({ children }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      viewport={{ once: false }}
-      transition={{ duration: 0.5 }}>
-      {children}
-    </motion.div>
-  );
-};
 const HeroSection = () => {
   const opts = {
     height: "100%",
@@ -170,6 +161,115 @@ const AboutSection = () => {
           with cutting-edge fashion to create a unique experience for our fans.
           Our mission is to inspire and empower through our art and merchandise.
         </p>
+      </div>
+    </section>
+  );
+};
+
+const UpcomingMerchSection = () => {
+  return (
+    <section className="bg-gradient-to-r from-gray-100 to-white py-16 w-full">
+      <div className="container mx-auto px-8">
+        <h2
+          className="text-4xl font-bold mb-12 text-center text-black"
+          data-aos="fade-up">
+          Upcoming Merch
+        </h2>
+        <div
+          className="flex flex-col md:flex-row items-center justify-between"
+          data-aos="fade-up">
+          {/* Image Column */}
+          <motion.div
+            className="w-full md:w-1/2 m-3"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}>
+            <Image
+              src="/images/soulja-baseball.png"
+              alt="Limited Edition Crank That Anniversary Hoodie"
+              width={600}
+              height={600}
+              className="rounded-lg shadow-2xl"
+            />
+          </motion.div>
+          <Image
+            data-aos="fade-up-left"
+            src="/images/s.png"
+            alt="S"
+            width={100}
+            height={100}
+            className="shadow-1xl absolute -right-2 -top-12"
+          />
+          <Image
+            data-aos="fade-up-left"
+            src="/images/o.png"
+            alt="o"
+            width={100}
+            height={100}
+            className="shadow-1xl absolute -right-2 top-8"
+          />
+          <Image
+            data-aos="fade-up-left"
+            src="/images/u.png"
+            alt="u"
+            width={100}
+            height={100}
+            className="shadow-1xl absolute -right-2 top-32"
+          />
+          <Image
+            data-aos="fade-up-left"
+            src="/images/l.png"
+            alt="l"
+            width={100}
+            height={100}
+            className="shadow-1xl absolute -right-2 top-56"
+          />
+          <Image
+            data-aos="fade-up-left"
+            src="/images/j.png"
+            alt="j"
+            width={100}
+            height={100}
+            className="shadow-1xl absolute -right-2 top-80"
+          />
+          <Image
+            data-aos="fade-up-left"
+            src="/images/a.png"
+            alt="a"
+            width={100}
+            height={100}
+            className="shadow-1xl absolute -right-2 top-[400px]"
+          />
+          {/* Information Column */}
+          <div className="max-w-full md:w-1/2 my-5 md:mb-0 md:pr-8">
+            <h3
+              className="text-3xl font-bold mb-4 text-black"
+              data-aos="fade-up">
+              Limited Edition "Crank That" Anniversary Hoodie
+            </h3>
+            <p className="text-lg text-gray-700 mb-6" data-aos="fade-up">
+              Celebrate the 15th anniversary of "Crank That" with our exclusive,
+              limited-edition hoodie. Featuring a unique design that pays homage
+              to the iconic hit that started it all.
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-6">
+              <li data-aos="fade-up">Premium quality, super-soft fabric</li>
+              <li data-aos="fade-up">Embroidered "Crank That" logo</li>
+              <li data-aos="fade-up">Available in black and gold colorway</li>
+              <li data-aos="fade-up">Sizes: S, M, L, XL, XXL</li>
+            </ul>
+            <p className="text-xl font-bold text-black mb-6" data-aos="fade-up">
+              Price: $89.99
+            </p>
+            <p className="text-lg text-gray-700 mb-6" data-aos="fade-up">
+              Release Date: August 1, 2023
+            </p>
+            <button
+              className="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300"
+              data-aos="fade-up">
+              Pre-order Now
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -459,14 +559,18 @@ const EventsSection = () => {
 
   return (
     <section className="bg-gradient-to-r from-purple-800 to-indigo-900 py-16 w-full">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">
+      <div className="container mx-auto px-8">
+        <h2
+          className="text-4xl font-bold mb-12 text-center text-white"
+          data-aos="fade-up">
           Upcoming Events
         </h2>
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div
+          className="flex flex-col md:flex-row items-center justify-between"
+          data-aos="fade-up">
           {/* Image Column */}
           <motion.div
-            className="w-full md:w-1/2 mb-8 md:mb-0"
+            className="w-full md:w-1/2 mb-8 md:mb-0 items-center justify-center"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}>
             <Image
@@ -476,25 +580,23 @@ const EventsSection = () => {
               height={400}
               className="rounded-lg shadow-2xl border-4 border-white"
             />
-            <div className="flex justify-between p-3">
-              {Object.entries(timeLeft).map(([unit, value]) => (
-                <div key={unit} className="text-center">
-                  <div className="text-3xl font-bold text-white">{value}</div>
-                  <div className="text-sm text-purple-200">{unit}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
           {/* Event Info Column */}
           <div className="w-full md:w-1/2 md:pl-12">
-            <h3 className="text-3xl font-bold mb-2 text-white">
-              Soulja Boy Live
-            </h3>
-            <p className="text-xl text-purple-200 mb-6">
-              Get ready to crank that!
-            </p>
+            <div className="flex-row flex md:flex-col justify-between">
+              <h3
+                className="text-3xl font-bold mb-2 text-white"
+                data-aos="fade-up">
+                Soulja Live
+              </h3>
+              <p className="text-xl text-purple-200 mb-6" data-aos="fade-up">
+                Get ready to crank that!
+              </p>
+            </div>
 
-            <div className="bg-white bg-opacity-20 rounded-lg p-6 mb-6">
+            <div
+              className="bg-white bg-opacity-20 rounded-lg p-6 mb-6"
+              data-aos="fade-up">
               <p className="text-lg text-white mb-2">
                 <strong>Date:</strong> May 15, 2024
               </p>
@@ -505,8 +607,17 @@ const EventsSection = () => {
                 <strong>Venue:</strong> Mega Arena, Los Angeles
               </p>
             </div>
-
-            <button className="bg-yellow-400 text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition duration-300 mb-6">
+            <div className="flex justify-between p-3 mb-8" data-aos="fade-up">
+              {Object.entries(timeLeft).map(([unit, value]) => (
+                <div key={unit} className="text-center">
+                  <div className="text-3xl font-bold text-white">{value}</div>
+                  <div className="text-sm text-purple-200">{unit}</div>
+                </div>
+              ))}
+            </div>
+            <button
+              className="bg-yellow-400 text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition duration-300 mb-6 w-full"
+              data-aos="fade-up">
               Buy Tickets
             </button>
           </div>
@@ -548,41 +659,78 @@ const JewellerySection = () => {
     },
   ];
 
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesToShow(getSlidesToShow(window.innerWidth));
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const getSlidesToShow = (windowWidth) => {
+    if (windowWidth < 640) {
+      return 1;
+    } else if (windowWidth < 1024) {
+      return 2;
+    } else {
+      return 3;
+    }
+  };
+
   return (
     <section className="bg-gradient-to-r from-gray-100 to-white py-16 w-full">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-black">
+        <h2
+          className="text-4xl font-bold mb-12 text-center text-black"
+          data-aos="fade-up">
           Soulja Bling Collection
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {jewelleryItems.map((item) => (
-            <motion.div
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> */}
+        <Carousel
+          autoplay
+          arrows={true}
+          dots={true}
+          draggable={true}
+          slidesToShow={slidesToShow}
+          className="custom-arrows custom-dots">
+          {jewelleryItems.map((item, i) => (
+            <div
               key={item.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}>
-              <Image
-                src={item.image}
-                alt={item.name}
-                width={300}
-                height={300}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-yellow-600">
-                    {item.price}
-                  </span>
-                  <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition duration-300">
-                    Add to Cart
-                  </button>
+              className="p-4"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}>
+              <motion.div
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}>
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={300}
+                  height={300}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{item.name}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-2xl font-bold text-yellow-600">
+                      {item.price}
+                    </span>
+                    <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition duration-300">
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           ))}
-        </div>
+        </Carousel>
+        {/* </div> */}
       </div>
     </section>
   );
@@ -644,11 +792,13 @@ const InstagramSection = () => {
     <section className="bg-gray-100 py-16 w-full">
       {/* <section className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 py-16 w-full"> */}
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-black">
+        <h2
+          className="text-4xl font-bold mb-12 text-center text-black"
+          data-aos="fade-up">
           Soulja's Instagram
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
-          {instagramPosts.map((post) => (
+          {instagramPosts.map((post, i) => (
             <motion.a
               key={post.id}
               href={post.link}
@@ -658,6 +808,7 @@ const InstagramSection = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}>
               <Image
+                data-aos="fade-up"
                 src={post.imageUrl}
                 alt={`Instagram post ${post.id}`}
                 layout="fill"
@@ -675,13 +826,118 @@ const InstagramSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center" data-aos="fade-up">
           <a
             href="https://www.instagram.com/souljaboy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-purple-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
             Follow Soulja on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const LabelSection = () => {
+  const labelArtists = [
+    {
+      id: 1,
+      name: "Lil Flash",
+      photo: "/images/travis-event.webp",
+      description: "Rising trap star with hard-hitting beats",
+      instagram: "https://www.instagram.com/lilflash",
+      spotify: "https://open.spotify.com/artist/lilflash",
+    },
+    {
+      id: 2,
+      name: "Kay Bandz",
+      photo: "/images/travis-event.webp",
+      description: "Smooth R&B vibes with a hip-hop edge",
+      instagram: "https://www.instagram.com/kaybandz",
+      spotify: "https://open.spotify.com/artist/kaybandz",
+    },
+    {
+      id: 3,
+      name: "AGoff",
+      photo: "/images/travis-event.webp",
+      description: "Lyrical genius with conscious rap flows",
+      instagram: "https://www.instagram.com/agoff",
+      spotify: "https://open.spotify.com/artist/agoff",
+    },
+  ];
+
+  return (
+    <section className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 py-16 w-full">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center mb-12">
+          <Image
+            data-aos="fade-up"
+            src="/images/Cactus-Jack-Symbol.png"
+            alt="Stacks on Deck Entertainment Logo"
+            width={150}
+            height={150}
+            className="mb-6"
+          />
+          <h2
+            className="text-4xl font-bold text-white text-center"
+            data-aos="fade-up">
+            SVNBIRDS
+          </h2>
+          <p
+            className="text-xl text-white text-center mt-4 max-w-2xl"
+            data-aos="fade-up">
+            Launching the next generation of hip-hop superstars. We're not just
+            a label, we're a movement.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {labelArtists.map((artist) => (
+            <div data-aos="fade-up">
+              <motion.div
+                key={artist.id}
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}>
+                <Image
+                  src={artist.photo}
+                  alt={artist.name}
+                  width={400}
+                  height={400}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">{artist.name}</h3>
+                  <p className="text-gray-600 mb-4">{artist.description}</p>
+                  <div className="flex justify-between">
+                    <a
+                      href={artist.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                      Instagram
+                    </a>
+                    <a
+                      href={artist.spotify}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full hover:from-green-600 hover:to-green-700 transition duration-300">
+                      Spotify
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center" data-aos="fade-up">
+          <a
+            href="#"
+            className="inline-block bg-white text-pink-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+            Join SVNBIRDS
           </a>
         </div>
       </div>
@@ -715,12 +971,14 @@ const ContactSection = () => {
   return (
     <section className="bg-gradient-to-b from-black to-gray-900 py-16 w-full">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">
+        <h2
+          className="text-4xl font-bold mb-12 text-center text-white"
+          data-aos="fade-up">
           Contact Soulja
         </h2>
         <div className="flex flex-wrap -mx-4">
           {/* Contact Form */}
-          <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+          <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0" data-aos="fade-up">
             <form
               onSubmit={handleSubmit}
               className="bg-white rounded-lg p-8 shadow-lg">
@@ -784,26 +1042,36 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="w-full lg:w-1/2 px-4">
             <div className="text-white">
-              <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
-              <p className="mb-4">
+              <h3 className="text-2xl font-bold mb-4" data-aos="fade-up">
+                Get in Touch
+              </h3>
+              <p className="mb-4" data-aos="fade-up">
                 For business inquiries, fan mail, or just to say hello, reach
                 out to us using the form or the contact information below.
               </p>
               <div className="mb-4">
-                <p className="font-bold">Email:</p>
-                <p>contact@souljaboy.com</p>
+                <p className="font-bold" data-aos="fade-up">
+                  Email:
+                </p>
+                <p data-aos="fade-up">contact@souljaboy.com</p>
               </div>
               <div className="mb-4">
-                <p className="font-bold">Management:</p>
-                <p>management@souljaboy.com</p>
+                <p className="font-bold" data-aos="fade-up">
+                  Management:
+                </p>
+                <p data-aos="fade-up">management@souljaboy.com</p>
               </div>
               <div className="mb-8">
-                <p className="font-bold">Address:</p>
-                <p>123 Soulja Street, Los Angeles, CA 90001</p>
+                <p className="font-bold" data-aos="fade-up">
+                  Address:
+                </p>
+                <p data-aos="fade-up">
+                  123 Soulja Street, Los Angeles, CA 90001
+                </p>
               </div>
 
               {/* Social Media Links */}
-              <h3 className="text-2xl font-bold mb-4">Follow Soulja Boy</h3>
+              <h3 className="text-2xl font-bold mb-4">Follow Soulja</h3>
               <div className="flex space-x-4">
                 <motion.a
                   href="https://www.instagram.com/souljaboy"
