@@ -99,7 +99,7 @@ const HeroSection = () => {
           {/* Logo */}
           <div className="mb-8" data-aos="fade-up">
             <Image
-              src="/images/cj-logo.png"
+              src="/images/logo-white.png"
               alt="Soulja Logo"
               width={150}
               height={150}
@@ -151,7 +151,9 @@ const AboutSection = () => {
   return (
     <section className="bg-gray-100 py-20 w-full">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
+        <h2
+          className="text-3xl font-bold mb-6 text-center text-black"
+          data-aos="fade-up">
           About Soulja
         </h2>
         <p
@@ -185,7 +187,7 @@ const UpcomingMerchSection = () => {
             transition={{ type: "spring", stiffness: 300 }}>
             <Image
               src="/images/soulja-baseball.png"
-              alt="Limited Edition Crank That Anniversary Hoodie"
+              alt="Limited Edition Anniversary Hoodie"
               width={600}
               height={600}
               className="rounded-lg shadow-2xl"
@@ -244,24 +246,24 @@ const UpcomingMerchSection = () => {
             <h3
               className="text-3xl font-bold mb-4 text-black"
               data-aos="fade-up">
-              Limited Edition "Crank That" Anniversary Hoodie
+              Limited Edition Soulja Baseball Jacket
             </h3>
             <p className="text-lg text-gray-700 mb-6" data-aos="fade-up">
-              Celebrate the 15th anniversary of "Crank That" with our exclusive,
-              limited-edition hoodie. Featuring a unique design that pays homage
-              to the iconic hit that started it all.
+              The Limited Edition Soulja Baseball Jacket is designed to
+              celebrate the anniversary of Soulja's debut album, "Deja vu" and
+              showcases Soulja's iconic logo.
             </p>
             <ul className="list-disc list-inside text-gray-700 mb-6">
               <li data-aos="fade-up">Premium quality, super-soft fabric</li>
-              <li data-aos="fade-up">Embroidered "Crank That" logo</li>
-              <li data-aos="fade-up">Available in black and gold colorway</li>
+              <li data-aos="fade-up">Embroidered Iconic Soulja logo</li>
+              <li data-aos="fade-up">Available in blue and white colorway</li>
               <li data-aos="fade-up">Sizes: S, M, L, XL, XXL</li>
             </ul>
             <p className="text-xl font-bold text-black mb-6" data-aos="fade-up">
               Price: $89.99
             </p>
             <p className="text-lg text-gray-700 mb-6" data-aos="fade-up">
-              Release Date: August 1, 2023
+              Release Date: September 1, 2024
             </p>
             <button
               className="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300"
@@ -281,25 +283,37 @@ const TshirtsCarousel = () => {
       id: 1,
       name: "Classic Logo Tee",
       price: "$29.99",
-      image: "/images/travis-merch1.gif",
+      image: "/images/clothing-1.jpeg",
     },
     {
       id: 2,
       name: "Urban Beat Tee",
       price: "$34.99",
-      image: "/images/travis-merch1.gif",
+      image: "/images/clothing-2.png",
     },
     {
       id: 3,
       name: "Soulja Vibes Tee",
       price: "$32.99",
-      image: "/images/travis-merch1.gif",
+      image: "/images/clothing-3.png",
     },
     {
       id: 4,
       name: "Rhythm & Style Tee",
       price: "$29.99",
-      image: "/images/travis-merch1.gif",
+      image: "/images/clothing-4.png",
+    },
+    {
+      id: 5,
+      name: "Chill Out Tee",
+      price: "$29.99",
+      image: "/images/clothing-5.jpeg",
+    },
+    {
+      id: 6,
+      name: "Soulja Fresh Tee",
+      price: "$29.99",
+      image: "/images/clothing-6.jpg",
     },
   ];
 
@@ -329,7 +343,7 @@ const TshirtsCarousel = () => {
     <section className="bg-white py-28 w-full">
       <div className="container mx-auto px-4">
         <h2
-          className="text-3xl font-bold mb-8 text-center"
+          className="text-3xl font-bold mb-8 text-center text-black"
           data-aos="fade-up"
           data-aos-duration="1000">
           Soulja Merch
@@ -433,31 +447,17 @@ const VinylRecordCarousel = () => {
   const records = [
     {
       id: 1,
-      name: "Crank That",
-      artist: "Soulja Boy",
-      year: "2007",
-      image: "/images/Vinyl-1.png",
+      name: "Deja Vu",
+      artist: "Soulja",
+      year: "2024",
+      image: "/images/dejavu-record.png",
     },
     {
       id: 2,
-      name: "Kiss Me Thru the Phone",
-      artist: "Soulja Boy Tell'em",
-      year: "2008",
-      image: "/images/Vinyl-2.webp",
-    },
-    {
-      id: 3,
-      name: "Pretty Boy Swag",
-      artist: "Soulja Boy",
-      year: "2010",
-      image: "/images/Vinyl-1.png",
-    },
-    {
-      id: 4,
-      name: "Turn My Swag On",
-      artist: "Soulja Boy Tell'em",
-      year: "2009",
-      image: "/images/Vinyl-2.webp",
+      name: "Nomadic",
+      artist: "Soulja",
+      year: "2020",
+      image: "/images/nomadic-record.png",
     },
   ];
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -633,28 +633,28 @@ const JewellerySection = () => {
       id: 1,
       name: "Soulja Chain",
       price: "$999.99",
-      image: "/images/bling1.webp",
-      description: "Iconic Soulja Boy signature chain",
+      image: "/images/bling (1).jpg",
+      description: "Iconic Soulja signature chain",
     },
     {
       id: 2,
       name: "Crank That Pendant",
       price: "$599.99",
-      image: "/images/bling2.webp",
+      image: "/images/bling (2).jpg",
       description: "Gold pendant inspired by the hit single",
     },
     {
       id: 3,
       name: "Bling Ring Set",
       price: "$799.99",
-      image: "/images/bling1.webp",
+      image: "/images/bling (3).jpg",
       description: "Set of 3 diamond-encrusted rings",
     },
     {
       id: 4,
       name: "Swag Earrings",
       price: "$399.99",
-      image: "/images/bling2.webp",
+      image: "/images/bling (4).jpg",
       description: "Flashy earrings for the true Soulja fan",
     },
   ];
@@ -918,7 +918,9 @@ const LabelSection = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{artist.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-black">
+                    {artist.name}
+                  </h3>
                   <p className="text-gray-600 mb-4">{artist.description}</p>
                   <div className="flex justify-between">
                     <a
